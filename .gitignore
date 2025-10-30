@@ -44,14 +44,7 @@ venv.bak/
 *.ipynb
 
 # Data files (large datasets and embeddings)
-data/*.csv
-data/*.npy
-data/emb_*/
-data/index_*/
-data/goodbooks/
-data/goodbooks-10k/
-data/oulad/
-data/raw/
+data/*
 
 # Keep sample/small synthetic data if needed
 !data/synth_smoke.csv
