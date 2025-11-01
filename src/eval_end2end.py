@@ -334,6 +334,14 @@ def main():
         "ann_recall_vs_exact_at_k_mean": float(np.mean(ann_agree_recall)),
     }
 
+    out_dir = Path(args.index)
+    if out_dir.is_file():
+        out_dir = out_dir.parent
+    out_path = out_dir / f"end2end_{args.ann_method}.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2)
+
     print(json.dumps(out, indent=2))
 
 
