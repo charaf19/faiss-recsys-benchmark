@@ -4,24 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
 
 # Virtual Environment
 venv/
@@ -29,7 +11,10 @@ env/
 ENV/
 env.bak/
 venv.bak/
-.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
 
 # IDEs
 .vscode/
@@ -37,54 +22,38 @@ venv.bak/
 *.swp
 *.swo
 *~
+
+# OS
 .DS_Store
+Thumbs.db
 
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
+# Data files (large datasets)
+*.csv
+*.tsv
+*.parquet
+*.feather
 
-# Data files (large datasets and embeddings)
-data/*
+# Exception: keep small metadata/config CSVs in results
+!results/**/*.csv
+!results/*.csv
 
-# Keep sample/small synthetic data if needed
-!data/synth_smoke.csv
-
-# Results and outputs
-results/
-*.png
-*.jpg
-*.pdf
-*.svg
+# Model files and embeddings
+*.npy
+*.index
+*.pkl
+*.h5
+*.pt
+*.pth
 
 # Logs
 *.log
-logs/
 
-# Model files
-*.pkl
-*.joblib
-*.h5
-*.hdf5
-*.pth
-*.pt
-*.ckpt
-
-# FAISS indices
-*.index
+# Results and outputs
+results/runs/
+results/figures/
+results/figures_paper/
 
 # Temporary files
 *.tmp
-*.temp
 *.bak
-*.backup
-
-# OS specific
-Thumbs.db
-.DS_Store
-*.DS_Store
-
-# Performance profiling
-*.prof
-
-# Config overrides (if you want to keep configs local)
-# configs/local_*.yml
+*.cache
